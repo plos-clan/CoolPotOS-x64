@@ -1,17 +1,37 @@
-# Limine C Xmake Template
+# CoolPotOS for x86_64
 
-This repository contains a basic x86-64 kernel in C using Limine.
+## Introduction
 
-Only UEFI is supported, because BIOS related files are not included.
+This is a simple operating system for x86_64 architecture.
 
-### Dependencies
+## Model
 
-Xmake is required to build this project.
+* `os_terminal` by wenxuanjun [plos-clan/libos-terminal](https://github.com/plos-clan/libos-terminal)
 
-No need to install cross-compilers, as your system's GCC is usually enough (x86_64 platform).
+## Build & Run
 
-### Xmake targets
+### Environment
 
-Running `xmake` will build the kernel and create a bootable ISO image.
+You need to install them on your computer:
 
-Running `xmake run` will build above automatically and run it in QEMU.
+- xmake
+- zig (you can install manually if xmake cannot download it for you)
+- xorriso
+- qemu-system-i386
+
+### Steps
+
+- Run `xmake run` on your terminal then it will build and run automatically
+
+## License
+
+The project follows MIT license. Anyone can use it for free. See [LICENSE](LICENSE).
+
+## Contributing
+
+Welcome to create pull requests or issues to this project. I am really happy to see it!
+
+### Contributors
+
+* XIAOYI12 - xiaoyi12 OS Development
+* wenxuanjun - OS Developer
