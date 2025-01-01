@@ -17,7 +17,7 @@ You need to install them on your computer:
 - xmake
 - zig (you can install manually if xmake cannot download it for you)
 - xorriso
-- qemu-system-i386
+- qemu-system-x86_64
 
 ### Steps
 
@@ -33,5 +33,5 @@ Welcome to create pull requests or issues to this project. I am really happy to 
 
 ### Contributors
 
-* XIAOYI12 - xiaoyi12 OS Development
+* XIAOYI12 - OS Development
 * wenxuanjun - OS Developer

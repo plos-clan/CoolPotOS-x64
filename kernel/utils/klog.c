@@ -2,8 +2,6 @@
 #include "klog.h"
 #include "krlibc.h"
 #include "serial.h"
-
-#define STB_SPRINTF_IMPLEMENTATION
 #include "sprintf.h"
 
 void logk(const char *str) {
