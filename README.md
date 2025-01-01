@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This is a simple operating system for x86_64 architecture.
+This is a simple operating system for x86_64 architecture with both BIOS and UEFI compatibility.
 
 ## Model
 
