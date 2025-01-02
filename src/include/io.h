@@ -1,6 +1,6 @@
 #pragma once
 
-#include <stdint.h>
+#include "ctype.h"
 
 static inline void io_out8(uint16_t port, uint8_t data) {
     __asm__ volatile("outb %b0, %w1" : : "a"(data), "Nd"(port));

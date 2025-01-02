@@ -2,7 +2,6 @@ set_project("CoolPotOS")
 
 add_rules("mode.debug", "mode.release")
 add_requires("zig")
-set_defaultmode("debug")
 
 set_optimize("fastest")
 set_languages("c23")
@@ -25,12 +24,13 @@ target("kernel")
 
     add_linkdirs("libs")
     add_includedirs("libs")
-    add_includedirs("kernel/include")
-    add_ldflags("-T kernel/linker.ld", "-e kmain")
+    add_includedirs("src/include")
+    add_ldflags("-T src/linker.ld", "-e kmain")
 
     add_links("alloc")
     add_links("os_terminal")
-    add_files("kernel/**.c")
+    add_files("src/**.c")
+    add_files("src/**/*c")
 
 target("iso")
     set_kind("phony")
@@ -56,14 +56,15 @@ target("iso")
 
         local flags = {
             "-M", "q35",
+            "-m", "256m",
             "-cpu", "qemu64,+x2apic",
             "-smp", "4",
             "-serial", "stdio",
             "-no-reboot",
-            -- "-d", "in_asm,int",
+            --"-d", "in_asm,int",
             "-drive", "if=pflash,format=raw,file=assets/ovmf-code.fd",
             "-cdrom", config.buildir() .. "/CoolPotOS.iso"
         }
         
-        os.execv("qemu-system-x86_64", flags)
+        os.execv("qemu-system-x86_64" , flags)
     end)

@@ -9,5 +9,5 @@ void init_terminal() {
         .address = framebuffer->address
     };
 
-    terminal_init(&display, 10.0, malloc, free, NULL);
+    terminal_init(&display, 12.0, malloc, free, NULL);
 }

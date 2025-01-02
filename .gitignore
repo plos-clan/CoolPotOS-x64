@@ -3,6 +3,9 @@
 build/
 CMakeLists.txt
 
+# IDEA cache
+cmake-build-debug/
+
 # IDE Config
 .idea/
 .vscode/
