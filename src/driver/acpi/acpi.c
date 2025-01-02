@@ -9,17 +9,20 @@ static volatile struct limine_rsdp_request rsdp_request = {
         .revision = 0
 };
 
-void acpi_setup(){
+void acpi_setup() {
     struct limine_rsdp_response *response = rsdp_request.response;
-    RSDP *rsdp = (RSDP *)response->address;
-    if(rsdp == NULL) {
+
+    RSDP *rsdp = (RSDP *) response->address;
+    if (rsdp == NULL) {
         kwarn("Cannot find acpi rsdp table.");
         return;
     }
-    XSDT *xsdt = (XSDT*)rsdp->xsdt_address;
-    if(xsdt == NULL){
+
+    XSDT *xsdt = (XSDT *) rsdp->xsdt_address;
+    if (xsdt == NULL) {
         kwarn("Cannot find acpi xsdt table.");
         return;
     }
-}
 
+    kinfo("Found acpi xsdt table at %p", xsdt);
+}

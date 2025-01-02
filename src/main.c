@@ -7,6 +7,7 @@
 #include "heap.h"
 #include "krlibc.h"
 #include "acpi.h"
+#include "klog.h"
 
 __attribute__((used, section(".limine_requests")))
 static volatile LIMINE_BASE_REVISION(2)
@@ -25,8 +26,8 @@ void kmain(void) {
     init_heap();
     init_terminal();
 
-    printk("CoolPorOS %s (Limine Bootloader) on an x86_64\n",KERNEL_NAME);
-    kinfo("Video: %d x %d",framebuffer->width,framebuffer->height);
+    printk("CoolPorOS %s (Limine Bootloader) on an x86_64\n", KERNEL_NAME);
+    kinfo("Video: %d x %d", framebuffer->width, framebuffer->height);
 
     acpi_setup();
 
